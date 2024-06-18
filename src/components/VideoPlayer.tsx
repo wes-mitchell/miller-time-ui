@@ -7,7 +7,7 @@ interface VideoPlayerProps {
 }
 
 const VideoPlayer = ({ video, handleClick }: VideoPlayerProps) => {
-    const beerCan = new Audio('../open-beer.mp3');
+    const beerCan = new Audio(`${process.env.PUBLIC_URL}/open-beer.mp3`);
 
     const onPlayerReady = (event: any) => {
         event.target.playVideo();
@@ -35,7 +35,7 @@ const VideoPlayer = ({ video, handleClick }: VideoPlayerProps) => {
                 </Col>
                 <Col sm={11} className="text-center">
                     <img
-                        src='../images/miller-lite-button.png'
+                        src={`${process.env.PUBLIC_URL}/images/miller-lite-button.png`}
                         alt="miller lite logo"
                         onClick={() => {
                             handleClick();
