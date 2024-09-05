@@ -6,7 +6,7 @@ export const userUrls = {
     getAllUsers: baseUrl + 'GetAllUsers'
 }
 
-export const videoKeys = {
+export const userKeys = {
     getAllUsers: () => [userUrls.getAllUsers, {}] as const,
 }
 
