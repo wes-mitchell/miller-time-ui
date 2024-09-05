@@ -1,43 +1,44 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useGetAllVideos } from '../data/Video';
 import VideoPlayer from '../components/VideoPlayer';
 
 const MillerTimeView = () => {
-    // const [isLoading, setIsLoading] = useState(true);
-    const [currentVideo, setCurrentVideo] = useState({} as MillerTime.Video);
+    const [currentVideo, setCurrentVideo] = useState<MillerTime.Video | null>(null);
     const { data: videoData, isLoading: videosLoading } = useGetAllVideos();
     const [previouslyPlayedVideoIds, setPreviouslyPlayedVideoIds] = useState<Set<number>>(new Set());
 
-    const videos = useMemo(() => {
-        if (!videosLoading && videoData) {
-            setCurrentVideo(videoData[0])
-            return videoData ?? [];
+    useEffect(() => {
+        if (!videosLoading && videoData && videoData.length > 0) {
+            setCurrentVideo(videoData[0]);
         }
-        return [];
     }, [videoData, videosLoading]);
+
+    const videos = useMemo(() => videoData ?? [], [videoData]);
 
     const getRandomVideo = () => {
         const availableVideos = videos.filter(video => !previouslyPlayedVideoIds.has(video.Id));
         if (availableVideos.length === 0) {
             setPreviouslyPlayedVideoIds(new Set());
-            availableVideos.push(...videos);
+            return videos[Math.floor(Math.random() * videos.length)];
         }
         const randomIndex = Math.floor(Math.random() * availableVideos.length);
         const video = availableVideos[randomIndex];
         setPreviouslyPlayedVideoIds(prevSet => new Set(prevSet).add(video.Id));
         return video;
-    }
+    };
 
     const handleClick = () => {
-        // setIsLoading(true);
         const randomVideo = getRandomVideo();
         setCurrentVideo(randomVideo);
-        // setIsLoading(false);
-    }
+    };
 
     return (
-        <VideoPlayer video={videos && currentVideo} handleClick={handleClick} />
+        currentVideo ? (
+            <VideoPlayer video={currentVideo} handleClick={handleClick} />
+        ) : (
+            <div>Loading...</div>
+        )
     );
-}
+};
 
 export default MillerTimeView;

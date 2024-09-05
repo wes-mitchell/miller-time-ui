@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import YouTube from 'react-youtube';
 import { Container, Row, Col } from 'reactstrap';
 
@@ -7,7 +8,7 @@ interface VideoPlayerProps {
 }
 
 const VideoPlayer = ({ video, handleClick }: VideoPlayerProps) => {
-    const beerCan = new Audio(`${process.env.PUBLIC_URL}/open-beer.mp3`);
+    const beerCan = useMemo(() => new Audio(`${process.env.PUBLIC_URL}/open-beer.mp3`), []);
 
     const onPlayerReady = (event: any) => {
         event.target.playVideo();
@@ -23,7 +24,6 @@ const VideoPlayer = ({ video, handleClick }: VideoPlayerProps) => {
     };
 
     return (
-        video &&
         <Container className="d-flex justify-content-center flex-column align-items-center" style={{ marginTop: '20vh' }}>
             <Row>
                 <Col sm={11} className="text-center">
@@ -45,8 +45,8 @@ const VideoPlayer = ({ video, handleClick }: VideoPlayerProps) => {
                     />
                 </Col>
             </Row>
-        </Container >
-    )
+        </Container>
+    );
 };
 
 export default VideoPlayer;

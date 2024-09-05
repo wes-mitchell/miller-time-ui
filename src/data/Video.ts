@@ -1,6 +1,8 @@
 import { useQuery } from 'react-query';
 
-const baseUrl = 'https://localhost:44372/api/Video/'
+//TODO: Update this to use env variable
+//const baseUrl = 'https://localhost:44372/api/Video/'
+const baseUrl = 'https://miller-time-api.azurewebsites.net/api/Video/'
 
 export const videoUrls = {
     getAllVideos: baseUrl + 'GetAllVideos',
