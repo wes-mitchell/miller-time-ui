@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/miller-time-ui/static/css/main.0b0a3f2f.css",
-    "main.js": "/miller-time-ui/static/js/main.30701cb5.js",
+    "main.css": "/miller-time-ui/static/css/main.7ebdc077.css",
+    "main.js": "/miller-time-ui/static/js/main.19d385b7.js",
     "static/media/mlbg2.jpg": "/miller-time-ui/static/media/mlbg2.052dd00186b9acd907d9.jpg",
     "index.html": "/miller-time-ui/index.html",
-    "main.0b0a3f2f.css.map": "/miller-time-ui/static/css/main.0b0a3f2f.css.map",
-    "main.30701cb5.js.map": "/miller-time-ui/static/js/main.30701cb5.js.map"
+    "main.7ebdc077.css.map": "/miller-time-ui/static/css/main.7ebdc077.css.map",
+    "main.19d385b7.js.map": "/miller-time-ui/static/js/main.19d385b7.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b0a3f2f.css",
-    "static/js/main.30701cb5.js"
+    "static/css/main.7ebdc077.css",
+    "static/js/main.19d385b7.js"
   ]
 }
