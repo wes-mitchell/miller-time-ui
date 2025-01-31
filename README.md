@@ -4,10 +4,7 @@
 
 It's Miller Time is my personal, fun project born out of a common request because who doesn't love a good video showcase? The initial idea was to create a full-stack, fully-deployed web app that pulls data from an Azure-hosted API while the front-end chills on GitHub Pages. As it stands, it's a simple MVP that does exactly what it needs: grabbing a list of my videos from the database and showing them through a snazzy YouTube player component. Just pass the video ID, and voila! While it's basic for now, this is just the beginning. More features are coming soon, but hey—MVP reached, so it’s Miller Time! 🍻
 
-## Description
-
-This is the front-end repo for It's Miller Time! It includes the following technologies:
-
+## Technologies
 - **Frontend**: React, TypeScript
 - **Data Fetching**: React Query
 - **CI/CD**: GitHub Actions
