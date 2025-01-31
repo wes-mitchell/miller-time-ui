@@ -1,26 +1,61 @@
-img {
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1050;
+}
+
+.no-video-alert {
+  max-width: 945px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  margin: 1rem;
+}
+
+
+.youtube-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 853px;
+  aspect-ratio: 16 / 9;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.miller-button {
+  cursor: pointer;
   width: 125px;
   height: 125px;
   background-color: white;
   border-radius: 75px;
-  margin-top: 10px;
+  transition: transform 0.2s ease-in-out;
+  margin-right: 15px;
 }
 
-/* .video-player-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+.miller-button:hover {
+  transform: scale(1.1);
 }
 
-.video-container {
-  width: 100%;
-  max-width: 800px;
-  aspect-ratio: 16/9;
-  margin-bottom: 20px;
-} */
+@media (max-width: 425px) {
+  .miller-button {
+    width: 100px;
+    height: 100px;
+  }
+}
 
-/* .button-container {
-  display: flex;
-  justify-content: center;
-} */
+@media (max-width: 425px) {
+  .miller-button {
+    width: 85px;
+    height: 85px;
+  }
+}
